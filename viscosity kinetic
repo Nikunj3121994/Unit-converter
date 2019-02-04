@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+var input = parseFloat(document.getElementById("input").value);
+
+if(input<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value....";
+}
+if(input>0){
+document.getElementById("warning").innerHTML = "";
+}
+
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+
+
+for(var j=0;j<unitoutput.options.length;j++)
+    {
+	  if(unitoutput.options[j].selected) unitoutputid = j;
+	}
+
+var scale = [1,9.80665,1,0.1,0.1,6894.7572932,47.88025898,1.4881639436,47.88025898,1.4881639436,0.0004133789];
+
+var output;
+var multiply = scale[unitinputid];
+var divide = scale[unitoutputid];
+
+var all = multiply/divide;
+
+output = input*all;
+
+
+document.getElementById('output').value =output;
+
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:200px;
+}
+select,form,option{
+width:250px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="input" id="unitinputtable" value="10">
+    <form>
+                  <select name="unitinput" id="unitinput" onchange="calculate()">
+				  
+				          <option value="1">square meter/second</option>
+                          <option value="2">square meter/hour</option>
+                          <option value="3">square centimeter/</option>
+						  <option value="4">square millimeter/second</option>
+                          <option value="5">square foot/second</option>
+                          <option value="6">square foot/hour</option>
+						  <option value="7">stokes</option>
+                          
+						  
+                  </select>
+  
+        </form>
+  
+    </td>
+	            <td><input id="input" type="number" value="0" onkeyup="calculate()";autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    <form>
+         <select name="length output" id="unitoutput" onchange="calculate()">
+                          
+				          <option value="1">square meter/second</option>
+                          <option value="2">square meter/hour</option>
+                          <option value="3">square centimeter/</option>
+						  <option value="4">square millimeter/second</option>
+                          <option value="5">square foot/second</option>
+                          <option value="6">square foot/hour</option>
+						  <option value="7">stokes</option>
+                          
+						  						  
+          </select>
+    </form>
+ </td>
+    
+    <td><input id="output" type="number" value="0";autofocus/></td>
+</tr>
+</table>
+</body>
+</html>
+<h1>Unit converter</h1>
+<table>
+  <tr>
+    <th>
+
+<input type="button" value="Angle" onclick="window.location.href='http://www.calculation.net.in/unitconverter/angle/'" /></th><th>
+<input type="button" value="Angular acceleration" onclick="window.location.href='http://www.calculation.net.in/unitconverter/angular-acceleration/'" /></th><th>
+<input type="button" value="Angular velocity" onclick="window.location.href='http://www.calculation.net.in/unitconverter/angular-velocity/'" /></th></tr><tr><th>
+<input type="button" value="Area" onclick="window.location.href='http://www.calculation.net.in/unitconverter/area/'" /></th><th>
+<input type="button" value="Charge" onclick="window.location.href='http://www.calculation.net.in/unitconverter/charge/'" /></th><th>
+<input type="button" value="Common" onclick="window.location.href='http://www.calculation.net.in/unitconverter/common-converter/'" /></th></tr><tr><th>
+<input type="button" value="Current" onclick="window.location.href='http://www.calculation.net.in/unitconverter/current/'" /></th><th>
+<input type="button" value="Data storage" onclick="window.location.href='http://www.calculation.net.in/unitconverter/data-storage/'" /></th><th>
+<input type="button" value="Density" onclick="window.location.href='http://www.calculation.net.in/unitconverter/density/'" /></th></tr><tr><th>
+<input type="button" value="Digital image resolution" onclick="window.location.href='http://www.calculation.net.in/unitconverter/digital-image-resolution/'" /></th><th>
+<input type="button" value="Electric conductance" onclick="window.location.href='http://www.calculation.net.in/unitconverter/electric-conductance/'" /></th><th>
+<input type="button" value="Electric conductivity" onclick="window.location.href='http://www.calculation.net.in/unitconverter/electric-conductivity/'" /></th></tr><tr><th>
+<input type="button" value="Electric Field strength" onclick="window.location.href='http://www.calculation.net.in/unitconverter/electric-field-strength/'" /></th><th>
+<input type="button" value="Electric potential" onclick="window.location.href='http://www.calculation.net.in/unitconverter/electric-potential/'" /></th><th>
+<input type="button" value="Electric Resistance" onclick="window.location.href='http://www.calculation.net.in/unitconverter/electric-resistance/'" /></th></tr><tr><th>
+<input type="button" value="Electric resistivity" onclick="window.location.href='http://www.calculation.net.in/unitconverter/electric-resistivity/'" /></th><th>
+<input type="button" value="Electrostatic capacitance" onclick="window.location.href='http://www.calculation.net.in/unitconverter/electrostatic-capacitance/'" /></th><th>
+<input type="button" value="Energy" onclick="window.location.href='http://www.calculation.net.in/unitconverter/energy/'" /></th></tr><tr><th>
+<input type="button" value="Flow" onclick="window.location.href='http://www.calculation.net.in/unitconverter/flow/'" /></th><th>
+<input type="button" value="Force" onclick="window.location.href='http://www.calculation.net.in/unitconverter/force/'" /></th><th>
+<input type="button" value="Frequency" onclick="window.location.href='http://www.calculation.net.in/unitconverter/frequency-wavelength/'" /></th></tr><tr><th>
+<input type="button" value="Fuel" onclick="window.location.href='http://www.calculation.net.in/unitconverter/fuel-consumption/'" /></th><th>
+<input type="button" value="Heat density" onclick="window.location.href='http://www.calculation.net.in/unitconverter/heat-density/'" /></th><th>
+<input type="button" value="Heat flux density" onclick="window.location.href='http://www.calculation.net.in/unitconverter/heat-flux-density/'" /></th></tr><tr><th>
+<input type="button" value="Heat transfer-coefficient" onclick="window.location.href='http://www.calculation.net.in/unitconverter/heat-transfer-coefficient/'" /></th><th>
+<input type="button" value="Illumination" onclick="window.location.href='http://www.calculation.net.in/unitconverter/illumination/'" /></th><th>
+<input type="button" value="Inductance" onclick="window.location.href='http://www.calculation.net.in/unitconverter/inductance/'" /></th></tr><tr><th>
+<input type="button" value="Length" onclick="window.location.href='http://www.calculation.net.in/unitconverter/length/'" /></th><th>
+<input type="button" value="Linear charge density" onclick="window.location.href='http://www.calculation.net.in/unitconverter/linear-charge-density/'" /></th><th>
+<input type="button" value="Linear current density" onclick="window.location.href='http://www.calculation.net.in/unitconverter/linear-current-density/'" /></th></tr><tr><th>
+<input type="button" value="Luminance" onclick="window.location.href='http://www.calculation.net.in/unitconverter/luminance/'" /></th><th>
+<input type="button" value="Luminious intensity" onclick="window.location.href='http://www.calculation.net.in/unitconverter/luminious-intensity/'" /></th><th>
+<input type="button" value="Magnetic field strength" onclick="window.location.href='http://www.calculation.net.in/unitconverter/magnetic-field-strength/'" /></th></tr><tr><th>
+<input type="button" value="Magnetic flux" onclick="window.location.href='http://www.calculation.net.in/unitconverter/magnetic-flux/'" /></th><th>
+<input type="button" value="Magnetic flux density" onclick="window.location.href='http://www.calculation.net.in/unitconverter/magnetic-flux-density/'" /></th><th>
+<input type="button" value="Magnetomotive force" onclick="window.location.href='http://www.calculation.net.in/unitconverter/magnetomotive-force/'" /></th></tr><tr><th>
+<input type="button" value="Moment of inertia" onclick="window.location.href='http://www.calculation.net.in/unitconverter/moment-of-inertia/'" /></th><th>
+<input type="button" value="Power" onclick="window.location.href='http://www.calculation.net.in/unitconverter/power/'" /></th><th>
+<input type="button" value="Pressure" onclick="window.location.href='http://www.calculation.net.in/unitconverter/pressure/'" /></th></tr><tr><th>
+<input type="button" value="Radiation" onclick="window.location.href='http://www.calculation.net.in/unitconverter/radiation/'" /></th><th>
+<input type="button" value="Radiation absorbed-dose" onclick="window.location.href='http://www.calculation.net.in/unitconverter/radiation-absorbed-dose/'" /></th><th>
+<input type="button" value="Radiation activity" onclick="window.location.href='http://www.calculation.net.in/unitconverter/radiation-activity/'" /></th></tr><tr><th>
+<input type="button" value="Radiation exposure" onclick="window.location.href='http://www.calculation.net.in/unitconverter/radiation-exposure/'" /></th><th>
+<input type="button" value="Specific heat capacity" onclick="window.location.href='http://www.calculation.net.in/unitconverter/specific-heat-capacity/'" /></th><th>
+<input type="button" value="Specific Volume" onclick="window.location.href='http://www.calculation.net.in/unitconverter/specific-volume/'" /></th></tr><tr><th>
+<input type="button" value="Speed" onclick="window.location.href='http://www.calculation.net.in/unitconverter/speed/'" /></th><th>
+<input type="button" value="Suraface current density" onclick="window.location.href='http://www.calculation.net.in/unitconverter/surface-charge-density/'" /></th><th>
+<input type="button" value="Surface charge density" onclick="window.location.href='http://www.calculation.net.in/unitconverter/surface-current-density/'" /></th></tr><tr><th>
+<input type="button" value="Temperature" onclick="window.location.href='http://www.calculation.net.in/unitconverter/temperature/'" /></th><th>
+<input type="button" value="Thermal conductivity" onclick="window.location.href='http://www.calculation.net.in/unitconverter/thermal-conductivity/'" /></th><th>
+<input type="button" value="Thermal Resistance" onclick="window.location.href='http://www.calculation.net.in/unitconverter/thermal-resistance/'" /></th></tr><tr><th>
+<input type="button" value="Time" onclick="window.location.href='http://www.calculation.net.in/unitconverter/time/'" /></th><th>
+<input type="button" value="Torque" onclick="window.location.href='http://www.calculation.net.in/unitconverter/torque/'" /></th><th>
+<input type="button" value="Viscosity dynamic" onclick="window.location.href='http://www.calculation.net.in/unitconverter/viscosity-dynamic/'" /></th></tr><tr><th>
+<input type="button" value="Viscosity kinetic" onclick="window.location.href='http://www.calculation.net.in/unitconverter/viscosity-kinetic/'" /></th><th>
+<input type="button" value="Volume" onclick="window.location.href='http://www.calculation.net.in/unitconverter/volume/'" /></th><th>
+<input type="button" value="Volume charge density" onclick="window.location.href='http://www.calculation.net.in/unitconverter/volume-charge-density/'" /></th></tr><tr><th>
+<input type="button" value="Weight" onclick="window.location.href='http://www.calculation.net.in/unitconverter/weight-and-mass/'" /></th></tr></table>
