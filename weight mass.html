@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+var input = parseFloat(document.getElementById("input").value);
+
+if(input<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value....";
+}
+if(input>0){
+document.getElementById("warning").innerHTML = "";
+}
+
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+
+
+for(var j=0;j<unitoutput.options.length;j++)
+    {
+	  if(unitoutput.options[j].selected) unitoutputid = j;
+	}
+
+var scale = [1,1E+21,1E+18,1E+15,1E+12,1E+9,1E+6,1000,1E-1,1E-2,1E-3,1E-4,1E-5,1E-6,1E-9,1E-12,1E-15,1E-18,1E-21,1E-24,1E-27,1000,0.45359237,0.0283495231,0.0002,907.18474,1016.0469088,1.660540199E-27,1.66053E-27,9.80665,453.59237,14.593902937,14.593902937,0.3732417216,0.0140867196,100,2.17670999E-8,9.109389699E-31,1.672623099E-27,1.6749286E-27,3.343585999E-27,5.976E+24,2E+30];
+
+var output;
+var multiply = scale[unitinputid];
+var divide = scale[unitoutputid];
+
+var all = multiply/divide;
+
+output = input*all;
+
+
+document.getElementById('output').value =output;
+
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:200px;
+}
+select,form,option{
+width:300px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="input" id="unitinputtable" value="10">
+    <form>
+                  <select name="unitinput" id="unitinput" onchange="calculate()">
+				          <option value="0">kilogram</option>  
+				          <option value="1">yottagram</option>
+                          <option value="2">zetagram</option>
+                          <option value="3">exagram</option>
+						  <option value="4">petagram</option>
+                          <option value="5">teragram</option>
+                          <option value="6">gigagram</option>
+						  <option value="7">megagram</option>
+                          <option value="8">hectogram</option>
+                          <option value="9">decagram</option>
+						  <option value="10">gram</option>
+                          <option value="11">decigram</option>
+                          <option value="12">centigram</option>
+						  <option value="13">milligram</option>
+                          <option value="14">microgram</option>
+                          <option value="15">nanogram</option>
+						  <option value="16">picogram</option>
+                          <option value="17">femtogram</option>
+                          <option value="18">attogram</option>
+						  <option value="19">zeptogram</option>
+                          <option value="20">yottogram</option>
+                          <option value="21">ton(metric)</option>
+						  <option value="22">pound</option>
+                          <option value="23">ounce</option>
+                          <option value="24">carat</option>
+						  <option value="25">ton(short)(US)</option>
+                          <option value="26">ton(long)(UK)</option>
+                          <option value="27">Atomic mass unit</option>
+						  <option value="28">dalton</option>
+                          <option value="29">kg-force square second/metre</option>
+                          <option value="30">killopound</option>
+						  <option value="31">slug</option>
+                          <option value="32">pound force square second/foot</option>
+                          <option value="33">pound(troy)</option>
+						  <option value="34">poundal</option>
+                          <option value="35">quintal</option>
+                          <option value="36">plank mass</option>
+						  <option value="37">electron mass</option>
+                          <option value="38">proton mass</option>
+                          <option value="39">neutron mass</option>
+						  <option value="40">deutron mass</option>
+                          <option value="41">Earth mass</option>
+                          <option value="42">Sun mass</option>
+
+						  
+						  
+                  </select>
+  
+        </form>
+  
+    </td>
+	            <td><input id="input" type="number" value="0" onkeyup="calculate()";autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    <form>
+         <select name="length output" id="unitoutput" onchange="calculate()">
+                          <option value="0">kilogram</option>
+				          <option value="1">yottagram</option>
+                          <option value="2">zetagram</option>
+                          <option value="3">exagram</option>
+						  <option value="4">petagram</option>
+                          <option value="5">teragram</option>
+                          <option value="6">gigagram</option>
+						  <option value="7">megagram</option>
+                          <option value="8">hectogram</option>
+                          <option value="9">decagram</option>
+						  <option value="10">gram</option>
+                          <option value="11">decigram</option>
+                          <option value="12">centigram</option>
+						  <option value="13">milligram</option>
+                          <option value="14">microgram</option>
+                          <option value="15">nanogram</option>
+						  <option value="16">picogram</option>
+                          <option value="17">femtogram</option>
+                          <option value="18">attogram</option>
+						  <option value="19">zeptogram</option>
+                          <option value="20">yottogram</option>
+                          <option value="21">ton(metric)</option>
+						  <option value="22">pound</option>
+                          <option value="23">ounce</option>
+                          <option value="24">carat</option>
+						  <option value="25">ton(short)(US)</option>
+                          <option value="26">ton(long)(UK)</option>
+                          <option value="27">Atomic mass unit</option>
+						  <option value="28">dalton</option>
+                          <option value="29">kg-force square second/metre</option>
+                          <option value="30">killopound</option>
+						  <option value="31">slug</option>
+                          <option value="32">pound force square second/foot</option>
+                          <option value="33">pound(troy)</option>
+						  <option value="34">poundal</option>
+                          <option value="35">quintal</option>
+                          <option value="36">plank mass</option>
+						  <option value="37">electron mass</option>
+                          <option value="38">proton mass</option>
+                          <option value="39">neutron mass</option>
+						  <option value="40">deutron mass</option>
+                          <option value="41">Earth mass</option>
+                          <option value="42">Sun mass</option>
+						  
+          </select>
+    </form>
+ </td>
+    
+    <td><input id="output" type="number" value="0";autofocus/></td>
+</tr>
+</table>
+</body>
+</html>

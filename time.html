@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+var input = parseFloat(document.getElementById("input").value);
+
+if(input<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value....";
+}
+if(input>0){
+document.getElementById("warning").innerHTML = "";
+}
+
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+
+
+for(var j=0;j<unitoutput.options.length;j++)
+    {
+	  if(unitoutput.options[j].selected) unitoutputid = j;
+	}
+
+var scale = [1,1E-3,60,3600,86400,604800,2628000,3.1536E+7,3.1536E+8,3.1536E+9,3.1536E+10,1E-6,1E-9,1E-12,1E-15,1E-18,1E-8];
+
+var output;
+var multiply = scale[unitinputid];
+var divide = scale[unitoutputid];
+
+var all = multiply/divide;
+
+output = input*all;
+
+
+document.getElementById('output').value =output;
+
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:200px;
+}
+select,form,option{
+width:150px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="input" id="unitinputtable" value="10">
+    <form>
+                  <select name="unitinput" id="unitinput" onchange="calculate()">
+				  
+				          <option value="1">second</option>
+                          <option value="2">millisecond</option>
+                          <option value="3">minute</option>
+						  <option value="4">hour</option>
+                          <option value="5">day</option>
+                          <option value="6">week</option>
+						  <option value="7">month</option>
+                          <option value="8">year</option>
+                          <option value="9">decade</option>
+						  <option value="10">century</option>
+                          <option value="11">millenium</option>
+                          <option value="12">microsecond</option>
+						  <option value="13">nanosecond</option>
+                          <option value="14">picosecond</option>
+                          <option value="15">femtosecond</option>
+						  <option value="16">attosecond</option>
+                          <option value="17">shake</option>
+						  
+						  
+                  </select>
+  
+        </form>
+  
+    </td>
+	            <td><input id="input" type="number" value="0" onkeyup="calculate()";autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    <form>
+         <select name="length output" id="unitoutput" onchange="calculate()">
+                          
+				          <option value="1">second</option>
+                          <option value="2">millisecond</option>
+                          <option value="3">minute</option>
+						  <option value="4">hour</option>
+                          <option value="5">day</option>
+                          <option value="6">week</option>
+						  <option value="7">month</option>
+                          <option value="8">year</option>
+                          <option value="9">decade</option>
+						  <option value="10">century</option>
+                          <option value="11">millenium</option>
+                          <option value="12">microsecond</option>
+						  <option value="13">nanosecond</option>
+                          <option value="14">picosecond</option>
+                          <option value="15">femtosecond</option>
+						  <option value="16">attosecond</option>
+                          <option value="17">shake</option>
+						  
+          </select>
+    </form>
+ </td>
+    
+    <td><input id="output" type="number" value="0";autofocus/></td>
+</tr>
+</table>
+</body>
+</html>

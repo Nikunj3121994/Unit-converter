@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+var input = parseFloat(document.getElementById("input").value);
+
+if(input<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value....";
+}
+if(input>0){
+document.getElementById("warning").innerHTML = "";
+}
+
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+
+
+for(var j=0;j<unitoutput.options.length;j++)
+    {
+	  if(unitoutput.options[j].selected) unitoutputid = j;
+	}
+
+var scale = [1,1E+18,1E+15,1E+12,1E+9,1E+6,1000,100,10,0.1,0.01,1E-3,1E-6,1E-9,1E-12,1E-15,1E-18,0.01,1,1,1,0.01];
+
+var output;
+var multiply = scale[unitinputid];
+var divide = scale[unitoutputid];
+
+var all = multiply/divide;
+
+output = input*all;
+
+
+document.getElementById('output').value =output;
+
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:200px;
+}
+select,form,option{
+width:250px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="input" id="unitinputtable" value="10">
+    <form>
+                  <select name="unitinput" id="unitinput" onchange="calculate()">
+				  
+				          <option value="1">gray/second</option>
+                          <option value="2">exagray/second</option>
+                          <option value="3">petagray/second</option>
+						  <option value="4">teragray/second</option>
+                          <option value="5">gigagray/second</option>
+                          <option value="6">megagray/second</option>
+						  <option value="7">kilogray/second</option>
+                          <option value="8">hectogray/second</option>
+                          <option value="9">dekagray/second</option>
+						  <option value="10">decigray/second</option>
+                          <option value="11">centigray/second</option>
+                          <option value="12">milligray/second</option>
+						  <option value="13">microgray/second</option>
+                          <option value="14">nanogray/second</option>
+                          <option value="15">picogray/second</option>
+						  <option value="16">femtogray/second</option>
+                          <option value="17">attogray/second</option>
+                          <option value="18">radian/second</option>
+						  <option value="19">joule/kilogram second</option>
+                          <option value="20">Watt/kilogram</option>
+                          <option value="21">sievert/second</option>
+						  <option value="22">rem/second</option>
+						  
+						  
+                  </select>
+  
+        </form>
+  
+    </td>
+	            <td><input id="input" type="number" value="0" onkeyup="calculate()";autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    <form>
+         <select name="length output" id="unitoutput" onchange="calculate()">
+                          
+						  <option value="1">gray/second</option>
+                          <option value="2">exagray/second</option>
+                          <option value="3">petagray/second</option>
+						  <option value="4">teragray/second</option>
+                          <option value="5">gigagray/second</option>
+                          <option value="6">megagray/second</option>
+						  <option value="7">kilogray/second</option>
+                          <option value="8">hectogray/second</option>
+                          <option value="9">dekagray/second</option>
+						  <option value="10">decigray/second</option>
+                          <option value="11">centigray/second</option>
+                          <option value="12">milligray/second</option>
+						  <option value="13">microgray/second</option>
+                          <option value="14">nanogray/second</option>
+                          <option value="15">picogray/second</option>
+						  <option value="16">femtogray/second</option>
+                          <option value="17">attogray/second</option>
+                          <option value="18">radian/second</option>
+						  <option value="19">joule/kilogram second</option>
+                          <option value="20">Watt/kilogram</option>
+                          <option value="21">sievert/second</option>
+						  <option value="22">rem/second</option>
+						  
+          </select>
+    </form>
+ </td>
+    
+    <td><input id="output" type="number" value="0";autofocus/></td>
+</tr>
+</table>
+</body>
+</html>

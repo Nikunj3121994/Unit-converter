@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+var input = parseFloat(document.getElementById("input").value);
+
+if(input<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value....";
+}
+if(input>0){
+document.getElementById("warning").innerHTML = "";
+}
+
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+
+
+for(var j=0;j<unitoutput.options.length;j++)
+    {
+	  if(unitoutput.options[j].selected) unitoutputid = j;
+	}
+
+var scale = [1,1000,10000,1550.0031012,1.16299999,12.518427821,4186.8,697.8,11.63,41840,697.333333,11.62222,2.777777777E-7,0.2432317156,8026.6466174,11356.526682,189.27544655,3.1545907451,1634246.1785];
+
+var output;
+var multiply = scale[unitinputid];
+var divide = scale[unitoutputid];
+
+var all = multiply/divide;
+
+output = input*all;
+
+
+document.getElementById('output').value =output;
+
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:200px;
+}
+select,form,option{
+width:400px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="input" id="unitinputtable" value="10">
+    <form>
+                  <select name="unitinput" id="unitinput" onchange="calculate()">
+				  
+				          <option value="1">Watt/sqaure meter</option>
+                          <option value="2">kilowatt/square meter</option>
+                          <option value="3">Watt/square centimeter</option>
+						  <option value="4">Watt/square inch</option>
+                          <option value="5">Kilocalorie(IT)/hour square meter</option>
+                          <option value="6">Kilocalorie(IT)/hour square foot</option>
+						  <option value="7">calorie(IT)/second square centimeter</option>
+                          <option value="8">calorie(IT)/minute square centimeter</option>
+                          <option value="9">calorie(IT)/hour square centimeter</option>
+						  <option value="10">calorie(th)/second square centimeter</option>
+                          <option value="11">calorie(th)/minute square centimeter</option>
+                          <option value="12">calorie(th)/hour square centimeter</option>
+						  <option value="13">dyne/hour centimeter</option>
+                          <option value="14">foot pound/minute square foot</option>
+                          <option value="15">horsepower/square foot</option>
+						  <option value="16">BTU(IT)/second square foot</option>
+                          <option value="17">BTU(IT)/minute square foot</option>
+                          <option value="18">BTU(IT)/hour square foot</option>
+						  <option value="19">BTU(th)/hour square inch</option>
+                          
+						  
+                  </select>
+  
+        </form>
+  
+    </td>
+	            <td><input id="input" type="number" value="0" onkeyup="calculate()";autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    <form>
+         <select name="length output" id="unitoutput" onchange="calculate()">
+                          
+						  <option value="1">Watt/sqaure meter</option>
+                          <option value="2">kilowatt/square meter</option>
+                          <option value="3">Watt/square centimeter</option>
+						  <option value="4">Watt/square inch</option>
+                          <option value="5">Kilocalorie(IT)/hour square meter</option>
+                          <option value="6">Kilocalorie(IT)/hour square foot</option>
+						  <option value="7">calorie(IT)/second square centimeter</option>
+                          <option value="8">calorie(IT)/minute square centimeter</option>
+                          <option value="9">calorie(IT)/hour square centimeter</option>
+						  <option value="10">calorie(th)/second square centimeter</option>
+                          <option value="11">calorie(th)/minute square centimeter</option>
+                          <option value="12">calorie(th)/hour square centimeter</option>
+						  <option value="13">dyne/hour centimeter</option>
+                          <option value="14">foot pound/minute square foot</option>
+                          <option value="15">horsepower/square foot</option>
+						  <option value="16">BTU(IT)/second square foot</option>
+                          <option value="17">BTU(IT)/minute square foot</option>
+                          <option value="18">BTU(IT)/hour square foot</option>
+						  <option value="19">BTU(th)/hour square inch</option>
+                          
+          </select>
+    </form>
+ </td>
+    
+    <td><input id="output" type="number" value="0";autofocus/></td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+var input = parseFloat(document.getElementById("input").value);
+
+if(input<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value....";
+}
+if(input>0){
+document.getElementById("warning").innerHTML = "";
+}
+
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+
+
+for(var j=0;j<unitoutput.options.length;j++)
+    {
+	  if(unitoutput.options[j].selected) unitoutputid = j;
+	}
+
+var scale = [1,1000,1E+5,6894.7572932,6.9847572932E+6,1.01325E+5,1E+18,1E+15,1E+12,1E+9,1E+6,100,10,0.1,0.01,0.001,1E-6,1E-9,1E-12,1E-15,1E-18,1,1E+4,1E+6,100,0.1,0.1,9.80665,9.80665E+4,9.80665E+6,9.80665E+1,95760.517961,1.3789514E+7,1.07257E+5,1.5444256E+7];
+
+var output;
+var multiply = scale[unitinputid];
+var divide = scale[unitoutputid];
+
+var all = multiply/divide;
+
+output = input*all;
+
+
+document.getElementById('output').value =output;
+
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:200px;
+}
+select,form,option{
+width:250px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="input" id="unitinputtable" value="10">
+    <form>
+                  <select name="unitinput" id="unitinput" onchange="calculate()">
+				  
+				          <option value="1">pascal</option>
+                          <option value="2">kilopascal</option>
+                          <option value="3">bar</option>
+						  <option value="4">psi(pound per square inch)</option>
+                          <option value="5">ksi</option>
+                          <option value="6">atmosphere</option>
+						  <option value="7">exapascal</option>
+                          <option value="8">petapascal</option>
+                          <option value="9">terapascal</option>
+						  <option value="10">gigapascal</option>
+                          <option value="11">megapascal</option>
+                          <option value="12">hectopascal</option>
+						  <option value="13">decapascal</option>
+                          <option value="14">decipascal</option>
+                          <option value="15">centipascal</option>
+						  <option value="16">millipascal</option>
+                          <option value="17">micropascal</option>
+                          <option value="18">nanopascal</option>
+						  <option value="19">picopascal</option>
+                          <option value="20">femtopascal</option>
+                          <option value="21">attopascal</option>
+						  <option value="22">Newton/Square meter</option>
+                          <option value="23">Newton/Square centimeter</option>
+                          <option value="24">Newton/Square millimeter</option>
+  						  <option value="25">millibar</option>
+                          <option value="26">microbar</option>
+                          <option value="27">dyne/square centimeter</option>
+						  <option value="28">kg force/square meter</option>
+                          <option value="29">kg force/square centimeter</option>
+                          <option value="30">kg force/square millimeter</option>
+						  <option value="31">gram force/square centimeter</option>
+                          <option value="32">ton force(short)/square foot</option>
+                          <option value="33">ton force(short)/square inch</option>
+						  <option value="34">ton force(long)/square foot</option>
+                          <option value="35">ton force(long)/square inch</option>
+ 
+						  
+						  
+						  
+						  
+                  </select>
+  
+        </form>
+  
+    </td>
+	            <td><input id="input" type="number" value="0" onkeyup="calculate()";autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    <form>
+         <select name="length output" id="unitoutput" onchange="calculate()">
+                          
+						  <option value="1">pascal</option>
+                          <option value="2">kilopascal</option>
+                          <option value="3">bar</option>
+						  <option value="4">psi(pound per square inch)</option>
+                          <option value="5">ksi</option>
+                          <option value="6">atmosphere</option>
+						  <option value="7">exapascal</option>
+                          <option value="8">petapascal</option>
+                          <option value="9">terapascal</option>
+						  <option value="10">gigapascal</option>
+                          <option value="11">megapascal</option>
+                          <option value="12">hectopascal</option>
+						  <option value="13">decapascal</option>
+                          <option value="14">decipascal</option>
+                          <option value="15">centipascal</option>
+						  <option value="16">millipascal</option>
+                          <option value="17">micropascal</option>
+                          <option value="18">nanopascal</option>
+						  <option value="19">picopascal</option>
+                          <option value="20">femtopascal</option>
+                          <option value="21">attopascal</option>
+						  <option value="22">Newton/Square meter</option>
+                          <option value="23">Newton/Square centimeter</option>
+                          <option value="24">Newton/Square millimeter</option>
+  						  <option value="25">millibar</option>
+                          <option value="26">microbar</option>
+                          <option value="27">dyne/square centimeter</option>
+						  <option value="28">kg force/square meter</option>
+                          <option value="29">kg force/square centimeter</option>
+                          <option value="30">kg force/square millimeter</option>
+						  <option value="31">gram force/square centimeter</option>
+                          <option value="32">ton force(short)/square foot</option>
+                          <option value="33">ton force(short)/square inch</option>
+						  <option value="34">ton force(long)/square foot</option>
+                          <option value="35">ton force(long)/square inch</option>
+						  
+          </select>
+    </form>
+ </td>
+    
+    <td><input id="output" type="number" value="0";autofocus/></td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+var input = parseFloat(document.getElementById("input").value);
+
+if(input<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value....";
+}
+if(input>0){
+document.getElementById("warning").innerHTML = "";
+}
+
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+
+
+for(var j=0;j<unitoutput.options.length;j++)
+    {
+	  if(unitoutput.options[j].selected) unitoutputid = j;
+	}
+
+var scale = [1,0.277777777,0.44704,2.777777E-4,0.01666666,1000,2.7777777E-6,1.666666E-4,0.01,2.7777777E-7,0.001,8.46667E-5,0.3048,0.000254,0.9144,26.8224,1609.344,0.51444444,0.514773333,295.0464];
+
+var output;
+var multiply = scale[unitinputid];
+var divide = scale[unitoutputid];
+
+var all = multiply/divide;
+
+output = input*all;
+
+
+document.getElementById('output').value =output;
+
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:200px;
+}
+select,form,option{
+width:200px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="input" id="unitinputtable" value="10">
+    <form>
+                  <select name="unitinput" id="unitinput" onchange="calculate()">
+				  
+				          <option value="1">meter/second</option>
+                          <option value="2">kilometer/hour</option>
+                          <option value="3">mile/hour</option>
+						  <option value="4">meter/hour</option>
+                          <option value="5">meter/minute</option>
+                          <option value="6">kilometer/second</option>
+						  <option value="7">centimeter/hour</option>
+                          <option value="8">centimeter/minute</option>
+                          <option value="9">centimeter/second</option>
+						  <option value="10">millimeter/hour</option>
+                          <option value="11">millimeter/second</option>
+                          <option value="12">foot/hour</option>
+						  <option value="13">foot/second</option>
+                          <option value="14">yard/hour</option>
+                          <option value="15">yard/second</option>
+						  <option value="16">mile/minute</option>
+                          <option value="17">mile/second</option>
+                          <option value="18">knot</option>
+						  <option value="19">knot(US)</option>
+                          <option value="20">MACH(SI unit)</option>
+						  
+						  
+                  </select>
+  
+        </form>
+  
+    </td>
+	            <td><input id="input" type="number" value="0" onkeyup="calculate()";autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    <form>
+         <select name="length output" id="unitoutput" onchange="calculate()">
+                          
+				          <option value="1">meter/second</option>
+                          <option value="2">kilometer/hour</option>
+                          <option value="3">mile/hour</option>
+						  <option value="4">meter/hour</option>
+                          <option value="5">meter/minute</option>
+                          <option value="6">kilometer/second</option>
+						  <option value="7">centimeter/hour</option>
+                          <option value="8">centimeter/minute</option>
+                          <option value="9">centimeter/second</option>
+						  <option value="10">millimeter/hour</option>
+                          <option value="11">millimeter/second</option>
+                          <option value="12">foot/hour</option>
+						  <option value="13">foot/second</option>
+                          <option value="14">yard/hour</option>
+                          <option value="15">yard/second</option>
+						  <option value="16">mile/minute</option>
+                          <option value="17">mile/second</option>
+                          <option value="18">knot</option>
+						  <option value="19">knot(US)</option>
+                          <option value="20">MACH(SI unit)</option>
+						  
+          </select>
+    </form>
+ </td>
+    
+    <td><input id="output" type="number" value="0";autofocus/></td>
+</tr>
+</table>
+</body>
+</html>

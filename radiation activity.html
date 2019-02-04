@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+var input = parseFloat(document.getElementById("input").value);
+
+if(input<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value....";
+}
+if(input>0){
+document.getElementById("warning").innerHTML = "";
+}
+
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+
+
+for(var j=0;j<unitoutput.options.length;j++)
+    {
+	  if(unitoutput.options[j].selected) unitoutputid = j;
+	}
+
+var scale = [1,1E+12,1E+9,1E+6,1E+3,1E-3,3.7E+10,3.7E+13,3.7E+7,3.7E+4,37,0.037,1E+6,1,1,0.01666667];
+
+var output;
+var multiply = scale[unitinputid];
+var divide = scale[unitoutputid];
+
+var all = multiply/divide;
+
+output = input*all;
+
+
+document.getElementById('output').value =output;
+
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:200px;
+}
+select,form,option{
+width:250px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="input" id="unitinputtable" value="10">
+    <form>
+                  <select name="unitinput" id="unitinput" onchange="calculate()">
+				  
+						  <option value="1">becquerel</option>
+                          <option value="2">terabecquerel</option>
+                          <option value="3">gigabecquerel</option>
+						  <option value="4">megabecquerel</option>
+                          <option value="5">kilobecquerel</option>
+                          <option value="6">millibecquerel</option>
+						  <option value="7">curie(ci)</option>
+                          <option value="8">kilocurie(ci)</option>
+                          <option value="9">millicurie(ci)</option>
+						  <option value="10">microcurie(ci)</option>
+                          <option value="11">nanocurie(ci)</option>
+                          <option value="12">picocurie(ci)</option>
+						  <option value="13">rutherford</option>
+                          <option value="14">one/second</option>
+                          <option value="15">disintegrations/second</option>
+						  <option value="16">disintegrations/minute</option>
+                          
+						  
+						  
+                  </select>
+  
+        </form>
+  
+    </td>
+	            <td><input id="input" type="number" value="0" onkeyup="calculate()";autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    <form>
+         <select name="length output" id="unitoutput" onchange="calculate()">
+                          
+						  <option value="1">becquerel</option>
+                          <option value="2">terabecquerel</option>
+                          <option value="3">gigabecquerel</option>
+						  <option value="4">megabecquerel</option>
+                          <option value="5">kilobecquerel</option>
+                          <option value="6">millibecquerel</option>
+						  <option value="7">curie(ci)</option>
+                          <option value="8">kilocurie(ci)</option>
+                          <option value="9">millicurie(ci)</option>
+						  <option value="10">microcurie(ci)</option>
+                          <option value="11">nanocurie(ci)</option>
+                          <option value="12">picocurie(ci)</option>
+						  <option value="13">rutherford</option>
+                          <option value="14">one/second</option>
+                          <option value="15">disintegrations/second</option>
+						  <option value="16">disintegrations/minute</option>
+						  
+          </select>
+    </form>
+ </td>
+    
+    <td><input id="output" type="number" value="0";autofocus/></td>
+</tr>
+</table>
+</body>
+</html>

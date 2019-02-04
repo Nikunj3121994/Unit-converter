@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+var input =parseFloat(document.getElementById("input").value);
+
+
+
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+
+
+for(var j=0;j<unitoutput.options.length;j++)
+    {
+	  if(unitoutput.options[j].selected) unitoutputid = j;
+	}
+	
+
+
+switch(unitinputid){
+case 0:
+    if(input<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value for kelvin...";
+}
+if(input>0){
+document.getElementById("warning").innerHTML = "";
+}
+
+    middle = input;
+	break;
+case 1:
+if(input<-273.15){
+document.getElementById("warning").innerHTML = "Please enter a correct value for degree celcius..";
+}
+if(input>-273.15){
+document.getElementById("warning").innerHTML = "";
+}
+
+   
+   middle = input + 273.15;
+   break;
+case 2:
+if(input<-459.67){
+document.getElementById("warning").innerHTML = "Please enter a correct value for fahreheit...";
+}
+if(input>-459.67){
+document.getElementById("warning").innerHTML = "";
+}
+   
+   middle = ((input-32)*(5/9))+273.15;
+   break;
+}
+
+switch(unitoutputid){
+
+case 0:
+ 
+ output = middle;
+   break;
+case 1:
+
+   output = middle - 273.15;
+   break;
+case 2:
+
+   output = ((middle - 273.15)*(9/5)) + 32;
+   break;
+   }
+
+document.getElementById('output').value =output;
+
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:200px;
+}
+select,form,option{
+width:150px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="input" id="unitinputtable" value="10">
+    <form>
+                  <select name="unitinput" id="unitinput" onchange="calculate()">
+				  
+				          <option value="1">Kelvin</option>
+                          <option value="2">Degree(C)</option>
+                          <option value="3">Fahrenheit(F)</option>
+						  
+                  </select>
+  
+        </form>
+  
+    </td>
+	            <td><input id="input" type="number" value="0" onkeyup="calculate()";autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    <form>
+         <select name="length output" id="unitoutput" onchange="calculate()">
+                  <option value="1">Kelvin</option>
+                          <option value="2">Degree(C)</option>
+                          <option value="3">Fahrenheit(F)</option>
+						  
+				  </select>
+    </form>
+ </td>
+    
+    <td><input id="output" type="number" value="0";autofocus/></td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+var input = parseFloat(document.getElementById("input").value);
+
+if(input<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value....";
+}
+if(input>0){
+document.getElementById("warning").innerHTML = "";
+}
+
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+
+
+for(var j=0;j<unitoutput.options.length;j++)
+    {
+	  if(unitoutput.options[j].selected) unitoutputid = j;
+	}
+
+var scale = [1,10,100,1000,1E+6,1E+9,1E+12,1E+15,1E+18,1E+21,1E+24,1E-1,1E-2,1E-3,1E-6,1E-9,1E-12,1E-15,1E-18,1E-21,1E-24,1E-10,1E-6,2.54E-5,2.1166E-3,1.8288,1852,20.1168,5.0292,6.371E+6,3.84402E+8,1.495978707E+11,9.460730472580E+15,30.85674008014E+15,2.817940285E-15,2.426310215E-12,1.616199E-35,201,2.4,0.91,1610,4800,2.54E-2,0.3048];
+
+var output;
+var multiply = scale[unitinputid];
+var divide = scale[unitoutputid];
+
+var all = multiply/divide;
+
+output = input*all;
+
+
+document.getElementById('output').value =output;
+
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:200px;
+}
+select,form,option{
+width:400px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="input" id="unitinputtable" value="10">
+    <form>
+                  <select name="unitinput" id="unitinput" onchange="calculate()">
+				  
+				          <option value="1">metre</option>
+                          <option value="2">decameter</option>
+                          <option value="3">hectometer</option>
+						  <option value="4">kilometre</option>
+                          <option value="5">megametre</option>
+                          <option value="6">gigameter</option>
+						  <option value="7">terametre</option>
+                          <option value="8">petametre</option>
+                          <option value="9">exameter</option>
+						  <option value="10">zetametre</option>
+                          <option value="11">yottametre</option>
+                          <option value="12">decimeter</option>
+						  <option value="13">centimetre</option>
+                          <option value="14">millimetre</option>
+                          <option value="15">micrometer</option>
+						  <option value="16">nanometre</option>
+                          <option value="17">picometre</option>
+                          <option value="18">femtometer</option>
+						  <option value="19">attometre</option>
+                          <option value="20">zeptometre</option>
+                          <option value="21">yottometer</option>
+						  <option value="22">angstrom</option>
+                          <option value="23">micron</option>
+                          <option value="24">thou</option>
+						  <option value="25">line</option>
+                          <option value="26">fathom</option>
+                          <option value="27">nautical mile</option>
+						  <option value="28">chain</option>
+                          <option value="29">rod</option>
+                          <option value="30">earth radius</option>
+						  <option value="31">lunar ditstance(from earth to moon)</option>
+                          <option value="32">Astronomical unit(from earth to sun)</option>
+                          <option value="33">light year</option>
+						  <option value="34">parse</option>
+                          <option value="35">electon radius</option>
+                          <option value="36">compton wavelength</option>
+						  <option value="37">plank length</option>
+                          <option value="38">furlong</option>
+                          <option value="39">horse length</option>
+						  <option value="40">yard</option>
+                          <option value="41">mile</option>
+                          <option value="42">league</option>
+						  <option value="43">inch</option>
+                          <option value="44">foot</option>
+						  
+						  
+                  </select>
+  
+        </form>
+  
+    </td>
+	            <td><input id="input" type="number" value="0" onkeyup="calculate()";autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    <form>
+         <select name="length output" id="unitoutput" onchange="calculate()">
+                          
+						  <option value="1">metre</option>
+                          <option value="2">decameter</option>
+                          <option value="3">hectometer</option>
+						  <option value="4">kilometre</option>
+                          <option value="5">megametre</option>
+                          <option value="6">gigameter</option>
+						  <option value="7">terametre</option>
+                          <option value="8">petametre</option>
+                          <option value="9">exameter</option>
+						  <option value="10">zetametre</option>
+                          <option value="11">yottametre</option>
+                          <option value="12">decimeter</option>
+						  <option value="13">centimetre</option>
+                          <option value="14">millimetre</option>
+                          <option value="15">micrometer</option>
+						  <option value="16">nanometre</option>
+                          <option value="17">picometre</option>
+                          <option value="18">femtometer</option>
+						  <option value="19">attometre</option>
+                          <option value="20">zeptometre</option>
+                          <option value="21">yottometer</option>
+						  <option value="22">angstrom</option>
+                          <option value="23">micron</option>
+                          <option value="24">thou</option>
+						  <option value="25">line</option>
+                          <option value="26">fathom</option>
+                          <option value="27">nautical mile</option>
+						  <option value="28">chain</option>
+                          <option value="29">rod</option>
+                          <option value="30">earth radius</option>
+						  <option value="31">lunar ditstance(from earth to moon)</option>
+                          <option value="32">Astronomical unit(from earth to sun)</option>
+                          <option value="33">light year</option>
+						  <option value="34">parse</option>
+                          <option value="35">electon radius</option>
+                          <option value="36">compton wavelength</option>
+						  <option value="37">plank length</option>
+                          <option value="38">furlong</option>
+                          <option value="39">horse length</option>
+						  <option value="40">yard</option>
+                          <option value="41">mile</option>
+                          <option value="42">league</option>
+						  <option value="43">inch</option>
+                          <option value="44">foot</option>
+						  
+          </select>
+    </form>
+ </td>
+    
+    <td><input id="output" type="number" value="0";autofocus/></td>
+</tr>
+</table>
+</body>
+</html>
